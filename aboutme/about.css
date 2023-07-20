@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins';
+}
+
+:root{
+    --bg-color: #1f242d;
+    --section-bg-color: #323946;
+    --text-color: #fff;
+    --main-color: #956423;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body{
+    background: var(--bg-color);
+    text-align: center;
+}
+
+.banner-area{
+    width: 100%;
+    height: 500px;
+    position: fixed;
+    background-image: url(../photos/cover2.jpg);
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+}
+
+.banner-area h2{
+    padding-top: 8%;
+    font-size: 70px;
+    font-family: Arial;
+    color: var(--text-color);
+}
+
+.content-area{
+    width: 100%;
+    position: relative;
+    top: 450px;
+    background: var(--bg-color);
+    height: 100%;
+    z-index: 5;
+}
+
+.content-area h2{
+    display: inline-block;
+    position: relative;
+    font-family: Arial;
+    padding-top: 30px;
+    font-size: 40px;
+    margin: 0;
+    color: var(--text-color);
+}
+
+span{
+    color: var(--main-color);
+}
+
+.content-area p::first-letter{
+    margin-left: 3em;
+}
+
+br p::first-letter{
+    margin-left: 3em;
+}
+
+.content-area p{
+    position: relative;
+    padding: 2% 0;
+    font-family: sans-serif;
+    line-height: 30px;
+    margin: 0 7rem;
+    font-size: 20px;
+    text-align: justify;
+    color: var(--text-color);
+    font-weight: 200;
+}
+
+.fa-arrow-left{
+    font-size: 40px;
+    color: var(--main-color);
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    margin-left: 20px;
+    margin-top: 20px;
+    transition: .5s;
+}
+
+
+@media (max-width: 858px){
+    .content-area p{
+        font-size: 20px;
+        margin: 20px;
+    }
+    .banner-area h2{
+        padding-top: 20%;
+    }
+    .fa-arrow-left{
+        font-size: 30px;
+    }
+    .html{
+        font-size: 50%;
+    }
+}
+@media (max-width: 700px){
+    .content-area p{
+        font-size: 18px;
+    }
+}
+
+/* ############### ANIMATION */
+
+.animate{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
+    z-index: 98;
+}
+
+.banner-area .animate,
+.content-area h2 .animate,
+.content-area p .animate{
+    animation: showRight 1s ease forwards;
+    animation-delay: calc(.3s * var(--i));
+}
+
+@keyframes showRight{
+    100%{
+        width: 0;
+    }
+}
